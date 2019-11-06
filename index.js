@@ -29,3 +29,14 @@ app.put('/user', (req, res) => {
 app.delete('/user', (req, res) => {
     res.send('Got a DELETE request at /user')
 })
+//Path Params
+app.get('/users/:name', (req, res) => {
+    res.send('Hello ' + req.params.name)
+})
+
+//Error Page
+app.get('*', (req, res) => { res.send('Page not found');});
+
+
+
+
