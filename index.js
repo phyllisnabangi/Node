@@ -14,3 +14,18 @@ app.get('/', (req, res) => {
 app.get('/about', (req, res) => {
     res.send('This is the about us page')
 })
+
+//POST Request
+app.post('/', (req, res) => {
+    res.send('Got a POST request')
+})
+
+//PUT Method
+app.put('/user', (req, res) => {
+    res.send('Got a PUT request at /user')
+})
+
+//DELETE Method
+app.delete('/user', (req, res) => {
+    res.send('Got a DELETE request at /user')
+})
