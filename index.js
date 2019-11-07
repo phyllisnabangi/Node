@@ -17,9 +17,6 @@ app.get('/index', (req, res) => {
 })
 //end of pug
 
-app.get('/param', (req, res) =>{
-    res.send('This is a class ' + req.query.class + ' cohort ' + req.query.cohort)
-})
 
 app.listen(3000, () => {
     console.log('listening on 3000');
@@ -52,7 +49,10 @@ app.delete('/user', (req, res) => {
 app.get('/users/:name', (req, res) => {
     res.send('Hello ' + req.params.name)
 })
-
+//Query Params
+app.get('/param', (req, res) =>{
+    res.send('This is a class ' + req.query.class + ' cohort ' + req.query.cohort)
+})
 
 
 //Error Page

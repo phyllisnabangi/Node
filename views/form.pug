@@ -1,17 +1,19 @@
 doctype html
 html
     head
-        link(rel="stylesheet", href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css")
-        //- link(rel='stylesheet', href='../bootstrap/css/bootstrap.min.css')
+        //- link(rel="stylesheet", href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css")
+        style
+          include style.css
+          include ../bootstrap/css/bootstrap.min.css
        
         title Registration Form
     body
         div.row.justify-content-center
             div.col-md-6
-                div.card-body
+                div.card-body.border
                     header.card-header
-                        h4.card-title Register
-                    
+                        h4.card-title.text-center.pt-1 Register
+                    article.card-body
                     form
                         div.form-row
                             div.col.form-group
@@ -21,5 +23,53 @@ html
                             div.col.form-group
                                 label Last name
                                 input.form-control( name="lastname")
+                        //- form-row end
+                        div.form-group
+                                label Email address
+                                input.form-control( name="emailaddress")
+                                small.form-text.text-muted We'll never share your email with anyone else.
+                        
+                        div.form-group
+                            label.form-check.form-check-inline
+                                input.form-check-input(type="radio" name="gender" value="option1")
+                                span.form-check-label Male
+
+                            label.form-check.form-check-inline
+                                input.form-check-input(type="radio" name="gender" value="option2")
+                                span.form-check-label Female
+                        //- form-group end
+
+                        div.form-row
+                            div.form-group.col-md-6
+                                label City
+                                input.form-control(type="text")
+
+                            div.form-group.col-md-6
+                                label Country
+                                select#inputState.form-control
+                                    option Choose...
+                                    option Uruguay
+                                    option(selected) Uganda
+                                    option United States
+                                    option India
+                                    option German
+                        
+                        div.form-group
+                            label Create password
+                            input.form-control(type="password")
+
+                        div.form-group
+                            button.btn.btn-primary.btn-block(type="submit") Register
+                        
+                        small.text-muted By clicking the 'Sign Up' button, you confirm that you accept our 
+                            br
+                            .
+                              Terms of use and Privacy Policy.
+                    
+                    //- End of form
+                //- End of Card-body
+
+                    
+                                    
                             
                     
