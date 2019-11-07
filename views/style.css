@@ -1,0 +1,15 @@
+#maindiv{
+    margin: 80px 100px; 
+   
+}
+#formdiv{
+    box-shadow: 10px 10px 10px rgb(199, 198, 198);
+    margin: 0px 300px;
+    border-radius: 20px; 
+    border: 0.5px solid rgb(219, 216, 216);
+   
+}
+h2{
+    text-align: center; 
+    color: rgb(58, 58, 146);
+}

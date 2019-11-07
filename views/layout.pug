@@ -2,8 +2,12 @@ doctype html
 html(lang="en")
     head
         title Sign UP form
-        link(rel='stylesheet', href='../bootsrap/css/bootsrap.css')
+        
+        style
+          include style.css
+          include ../bootstrap/css/bootstrap.min.css
        
     body
       block content
-    script(src='../bootsrap/css/bootsrap.css')
+    script
+    include (src='../bootsrap/css/bootsrap.js')

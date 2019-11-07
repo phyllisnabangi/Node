@@ -1,16 +1,23 @@
 extends layout.pug
 
 block content
+    div.container#maindiv
+        h2 Login Page
+        div.row
+            
+            div.col.bg-light.text-dark#formdiv
+                
+                form.w-75.pl-3.py-3
+                    div.form-row
+                        div.col.form-group
+                            label Username
+                            input.form-control(type="text" placeholder="Enter your username")
+                    div.form-row
+                        div.col.form-group
+                            label Password
+                            input.form-control(type="password" placeholder="Enter your password")
+                    div.form-row
+                        button.btn.btn-outline-primary Submit
+                        
+                        
     
-  form(action='/add_movie', method='POST')
-    p
-      | Username: 
-      input(type='text', name='title', value='')
-    p
-      | Email: 
-      input(type='text', name='year', value='')
-    p
-      | Password: 
-      input(type='text', name='imdb', value='')
-    p
-    input(type='submit', value='Submit')
