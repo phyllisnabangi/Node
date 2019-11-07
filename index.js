@@ -2,6 +2,17 @@
 const express =  require('express');
 const app = express()
 
+//Setting the view engine to pug
+app.set('view engine', 'pug');
+
+app.get('/', (req, res) => {
+    res.render('form');
+})
+
+app.get('/index', (req, res) => {
+    res.render('index');
+})
+
 app.listen(3000, () => {
     console.log('listening on 3000');
     })
@@ -33,6 +44,8 @@ app.delete('/user', (req, res) => {
 app.get('/users/:name', (req, res) => {
     res.send('Hello ' + req.params.name)
 })
+
+
 
 //Error Page
 app.get('*', (req, res) => { res.send('Page not found');});
