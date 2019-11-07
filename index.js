@@ -1,16 +1,24 @@
-// console.log("Hello World");
+const path = require('path')
 const express =  require('express');
 const app = express()
 
 //Setting the view engine to pug
 app.set('view engine', 'pug');
 
-app.get('/', (req, res) => {
+//Setting the folder
+app.set('views', path.join(__dirname, 'views'))
+
+app.get('/reg', (req, res) => {
     res.render('form');
 })
 
 app.get('/index', (req, res) => {
     res.render('index');
+})
+//end of pug
+
+app.get('/param', (req, res) =>{
+    res.send('This is a class ' + req.query.class + ' cohort ' + req.query.cohort)
 })
 
 app.listen(3000, () => {
