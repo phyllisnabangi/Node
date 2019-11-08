@@ -1,15 +1,35 @@
 const path = require('path')
+const bodyParser = require('body-parser')
 const express =  require('express');
 const app = express()
 
+app.use(bodyParser.urlencoded({extended: true}))
 //Setting the view engine to pug
 app.set('view engine', 'pug');
 
 //Setting the folder
 app.set('views', path.join(__dirname, 'views'))
 
-app.get('/reg', (req, res) => {
+
+
+//GET Route
+app.get('/reg', (req, res, next) => {
     res.render('form');
+})
+//POST Route
+app.post('/reg', (req, res) => {
+    // console.log("Form has been posted");
+    console.log('body', req.body);
+    console.log('Query Params', req.query);
+    // res.send(req.body)   
+})
+
+//Thanks Route
+app.post('/thanks', (req, res) => {
+    res.send("Hello " + req.body.firstname);
+    //  res.render('index', {
+    //     name: req.body.firstname
+    // });
 })
 
 app.get('/index', (req, res) => {
@@ -45,11 +65,11 @@ app.put('/user', (req, res) => {
 app.delete('/user', (req, res) => {
     res.send('Got a DELETE request at /user')
 })
-//Path Params
+//Path Params - set them at the path
 app.get('/users/:name', (req, res) => {
     res.send('Hello ' + req.params.name)
 })
-//Query Params
+//Query Params - set them at the url
 app.get('/param', (req, res) =>{
     res.send('This is a class ' + req.query.class + ' cohort ' + req.query.cohort)
 })

@@ -15,7 +15,7 @@ html
                     header.card-header
                         h4.card-title.text-center.pt-1 Register
                     article.card-body
-                    form
+                    form(method="POST" action="/thanks")
                         div.form-row
                             div.col.form-group
                                 label First name
@@ -25,48 +25,51 @@ html
                                 label Last name
                                 input.form-control( name="lastname")
                         //- form-row end
-                        div.form-group
+                        div.form-row
+                            div.col.form-group
                                 label Email address
                                 input.form-control( name="emailaddress")
                                 small.form-text.text-muted We'll never share your email with anyone else.
                         
-                        div.form-group
-                            label.form-check.form-check-inline
-                                input.form-check-input(type="radio" name="gender" value="option1")
-                                span.form-check-label Male
-
-                            label.form-check.form-check-inline
-                                input.form-check-input(type="radio" name="gender" value="option2")
-                                span.form-check-label Female
+                        div.form-row
+                            div.col.form-group
+                                label.form-check.form-check-inline
+                                    input.form-check-input(type="radio" name="gender" value="male")
+                                    span.form-check-label Male
+                            div.col.form-group
+                                label.form-check.form-check-inline
+                                    input.form-check-input(type="radio" name="gender" value="female")
+                                    span.form-check-label Female
                         //- form-group end
 
                         div.form-row
                             div.form-group.col-md-6
-                                label City
+                                label Country
                                 input.form-control(type="text")
 
                             div.form-group.col-md-6
-                                label Country
-                                select#inputState.form-control
+                                label City
+                                select#inputState.form-control(name="city")
                                     option Choose...
-                                    option Uruguay
-                                    option(selected) Uganda
-                                    option United States
-                                    option India
-                                    option German
-                        
-                        div.form-group
-                            label Create password
-                            input.form-control(type="password")
-
-                        div.form-group
-                            button.btn.btn-primary.btn-block(type="submit") Register
-                        
-                        small.text-muted By clicking the 'Sign Up' button, you confirm that you accept our 
-                            br
-                            .
-                              Terms of use and Privacy Policy.
-                    
+                                    option(value="Nairobi") Nairobi
+                                    option(value="Kampala" selected) Kampala
+                                    option(value="Dar-es Salaam") Dar-es Salaam
+                                    option(value="Kigali")  Kigali
+                                    option(value="Bujumbura")  Bujumbura
+                        div.form-row
+                            div.col.form-group
+                                label Create password
+                                input.form-control(type="password" name="pasword")
+                        div.form-row
+                            div.col.form-group
+                                button.btn.btn-primary.btn-block(type="submit") Register
+                            
+                        div.form-row
+                            small.col.text-muted By clicking the 'Sign Up' button, you confirm that you accept our 
+                                //- br
+                                //- .
+                                //- Terms of use and Privacy Policy.
+                                            
                     //- End of form
                 //- End of Card-body
 
