@@ -1,79 +1,72 @@
-doctype html
-html
-    head
-        //- link(rel="stylesheet", href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css")
-        style
-          include style.css
-          include ../bootstrap/css/bootstrap.min.css
-        
-       
-        title Registration Form
-    body
-        div.row.justify-content-center
-            div.col-md-6
-                div.card-body.border
-                    header.card-header
-                        h4.card-title.text-center.pt-1 Register
-                    article.card-body
-                    form(method="POST" action="/thanks")
-                        div.form-row
-                            div.col.form-group
-                                label First name
-                                input.form-control( name="firstname")
-                        
-                            div.col.form-group
-                                label Last name
-                                input.form-control( name="lastname")
-                        //- form-row end
-                        div.form-row
-                            div.col.form-group
-                                label Email address
-                                input.form-control( name="emailaddress")
-                                small.form-text.text-muted We'll never share your email with anyone else.
-                        
-                        div.form-row
-                            div.col.form-group
-                                label.form-check.form-check-inline
-                                    input.form-check-input(type="radio" name="gender" value="male")
-                                    span.form-check-label Male
-                            div.col.form-group
-                                label.form-check.form-check-inline
-                                    input.form-check-input(type="radio" name="gender" value="female")
-                                    span.form-check-label Female
-                        //- form-group end
+extends layout.pug
 
-                        div.form-row
-                            div.form-group.col-md-6
-                                label Country
-                                input.form-control(type="text")
-
-                            div.form-group.col-md-6
-                                label City
-                                select#inputState.form-control(name="city")
-                                    option Choose...
-                                    option(value="Nairobi") Nairobi
-                                    option(value="Kampala" selected) Kampala
-                                    option(value="Dar-es Salaam") Dar-es Salaam
-                                    option(value="Kigali")  Kigali
-                                    option(value="Bujumbura")  Bujumbura
-                        div.form-row
-                            div.col.form-group
-                                label Create password
-                                input.form-control(type="password" name="pasword")
-                        div.form-row
-                            div.col.form-group
-                                button.btn.btn-primary.btn-block(type="submit") Register
-                            
-                        div.form-row
-                            small.col.text-muted By clicking the 'Sign Up' button, you confirm that you accept our 
-                                //- br
-                                //- .
-                                //- Terms of use and Privacy Policy.
-                                            
-                    //- End of form
-                //- End of Card-body
-
+block content
+    div.row.justify-content-center
+        div.col-md-5
+            div.card-body.border
+                header.card-header
+                    h4.card-title.text-center.pt-1 Register
+                article.card-body
+                form(method="POST" action="/submit")
+                    div.form-row
+                        div.col.form-group
+                            label First name
+                            input.form-control( name="firstname")
                     
-                                    
-                            
+                        div.col.form-group
+                            label Last name
+                            input.form-control( name="lastname")
+                    //- form-row end
+                    div.form-row
+                        div.col.form-group
+                            label Email address
+                            input.form-control( name="emailaddress")
+                            small.form-text.text-muted We'll never share your email with anyone else.
                     
+                    div.form-row
+                        div.col.form-group
+                            label.form-check.form-check-inline
+                                input.form-check-input(type="radio" name="gender" value="male")
+                                span.form-check-label Male
+                        div.col.form-group
+                            label.form-check.form-check-inline
+                                input.form-check-input(type="radio" name="gender" value="female")
+                                span.form-check-label Female
+                    //- form-group end
+
+                    div.form-row
+                        div.form-group.col-md-6
+                            label Country
+                            input.form-control(type="text" name="country")
+
+                        div.form-group.col-md-6
+                            label City
+                            select#inputState.form-control(name="city")
+                                option Choose...
+                                option(value="Nairobi") Nairobi
+                                option(value="Kampala" selected) Kampala
+                                option(value="Dar-es Salaam") Dar-es Salaam
+                                option(value="Kigali")  Kigali
+                                option(value="Bujumbura")  Bujumbura
+                    div.form-row
+                        div.col.form-group
+                            label Create password
+                            input.form-control(type="password" name="password")
+                    div.form-row
+                        div.col.form-group
+                            button.btn.btn-primary.btn-block(type="submit") Register
+                        
+                    div.form-row
+                        small.col.text-muted By clicking the 'Sign Up' button, you confirm that you accept our 
+                            //- br
+                            //- .
+                            //- Terms of use and Privacy Policy.
+                                        
+                //- End of form
+            //- End of Card-body
+    
+
+                
+                                
+                        
+                
