@@ -3,7 +3,9 @@ const bodyParser = require('body-parser')
 const express =  require('express');
 const app = express()
 
+// body-parser to parse request body data
 app.use(bodyParser.urlencoded({extended: true}))
+
 //Setting the view engine to pug
 app.set('view engine', 'pug');
 
@@ -24,7 +26,7 @@ app.post('/reg', (req, res) => {
     // res.send(req.body)   
 })
 
-//Thanks Route
+//Submit Route
 app.post('/submit', (req, res) => {
     // res.send("Hello " + req.body.firstname);
      res.render('form_data', {
@@ -45,7 +47,7 @@ app.get('/data', (req, res) => {
     res.render('form_data');
 })
 
-
+//Setting the server to port 3000
 app.listen(3000, () => {
     console.log('listening on 3000');
     })
@@ -73,6 +75,7 @@ app.put('/user', (req, res) => {
 app.delete('/user', (req, res) => {
     res.send('Got a DELETE request at /user')
 })
+
 //Path Params - set them at the path
 app.get('/users/:name', (req, res) => {
     res.send('Hello ' + req.params.name)
