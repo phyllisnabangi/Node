@@ -1,5 +1,6 @@
 const path = require('path')
 const bodyParser = require('body-parser')
+// creates app by calling express
 const express =  require('express');
 const app = express()
 
