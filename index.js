@@ -13,7 +13,23 @@ app.set('view engine', 'pug');
 //Setting the folder
 app.set('views', path.join(__dirname, 'views'))
 
+//Setting the server to port 3000
+app.listen(3000, () => {
+    console.log('listening on 3000');
+    })
 
+// Mongoose connects the app to the mongoDB
+var mongoose = require("mongoose");
+mongoose.Promise = global.Promise;
+mongoose.connect("mongodb://localhost:27017/node-demo");
+
+// Model
+
+// Creating a Schema
+var nameSchema = new mongoose.Schema({
+    firstname: String,
+    lastname: String
+  });
 
 //GET Route
 app.get('/reg', (req, res, next) => {
@@ -22,6 +38,7 @@ app.get('/reg', (req, res, next) => {
 //POST Route
 app.post('/reg', (req, res) => {
     // console.log("Form has been posted");
+    
     console.log('body', req.body);
     console.log('Query Params', req.query);
     // res.send(req.body)   
@@ -48,10 +65,7 @@ app.get('/data', (req, res) => {
     res.render('form_data');
 })
 
-//Setting the server to port 3000
-app.listen(3000, () => {
-    console.log('listening on 3000');
-    })
+
 
 //Sending a GET request
 app.get('/', (req, res) => {
