@@ -5,7 +5,8 @@ const express =  require('express');
 const app = express()
 
 // body-parser to parse request body data
-app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 
 //Setting the view engine to pug
 app.set('view engine', 'pug');
@@ -22,14 +23,41 @@ app.listen(3000, () => {
 var mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 mongoose.connect("mongodb://localhost:27017/node-demo");
-
+  
 // Model
 
-// Creating a Schema
+// Creating a DB Schema
 var nameSchema = new mongoose.Schema({
     firstname: String,
     lastname: String
   });
+
+// Creating a model
+var User = mongoose.model("User", nameSchema)
+
+// RESTFUL API - mechanism by which data will be added to the database
+
+// CRUD endpoint
+app.post("/regData", (req, res) => {
+    // saving data to the db
+    var myData = new User(req.body);
+    myData.save()
+        // A promise-start --what is returned when the save to the database completes
+        .then(item => {
+            res.send("item saved to database");
+        })
+        .catch(err => {
+            res.status(400).send("unable to save to database");
+        });
+        // Promise-end
+});
+
+
+
+
+
+
+
 
 //GET Route
 app.get('/reg', (req, res, next) => {
