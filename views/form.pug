@@ -1,4 +1,4 @@
-extends layout.pug
+extends layout
 
 block content
     div.row.justify-content-center
@@ -7,7 +7,7 @@ block content
                 header.card-header
                     h4.card-title.text-center.pt-1 Register
                 article.card-body
-                form(method="POST" action="/submit")
+                form(method="POST" action="/reg")
                     div.form-row
                         div.col.form-group
                             label First name
