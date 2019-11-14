@@ -4,13 +4,20 @@ html(lang="en")
         title Sign UP form
         
         style
-          include ../customcss/form.css
           include ../bootstrap/css/bootstrap.min.css
        
     body
-      include includes/header.pug
+      div.container-fluid.bg-secondary.mb-4
+        div.card-body.text-center
+          h3.text-white My first Express App
+                 
+
       block content
-      include includes/footer.pug
+
+      footer
+        div.container-fluid.bg-secondary.mt-4
+          div.card-body.text-center
+              h3.text-white &copy; Phyllis
 
       script
         include ../bootstrap/js/bootstrap.min.js

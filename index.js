@@ -23,9 +23,10 @@ const nameSchema = new mongoose.Schema({
     emailaddress: String,
     gender: String,
     city: String,  
+    country: String,
 });
 // Creating an instance of the model
-var User = mongoose.model("User", nameSchema)
+const User = mongoose.model("User", nameSchema)
 
 // Routes
 app.get('/reg', (req, res) => {
@@ -42,7 +43,7 @@ app.post('/reg', (req, res) => {
                 })           
         })
         .catch(err => {
-            res.status(400).send("unable to save to database");
+            res.status(500).send("unable to save to database");
         });
  });
 
