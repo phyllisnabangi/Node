@@ -35,3 +35,12 @@ app.get('/users/:name', (req, res) => {
 app.get('/param', (req, res) =>{
     res.send('This is a class ' + req.query.class + ' cohort ' + req.query.cohort)
 })
+
+//MIDDLEWARE
+
+//DBs
+mongoose.connect("mongodb://localhost:27017/node-demo");
+
+//Putting routes in an indepedent file
+a new mtd called router in express
+const router = express.Router()
