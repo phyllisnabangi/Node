@@ -4,7 +4,6 @@ const router = express.Router();
 const User = require('../model/regModel')
 const multer = require('multer')
 
-const upload = multer({ storage: storage })
 
 /* Register Page */
 // gets and displays a register page
@@ -24,16 +23,5 @@ router.post('/', async (req, res) => {
         res.status(500).send("unable to save to database");
     }
 })
-
-
-/* Upload Page */
-// router.get('/', (req, res)=> {
-//     res.render('uploads')
-// });
-
-// router.post('/', upload.single('imageupload'),function(req, res) {
-//     res.send("File upload sucessfully.");
-//   });
-
 
  module.exports = router;
