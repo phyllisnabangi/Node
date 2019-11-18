@@ -13,7 +13,6 @@ const nameSchema = new mongoose.Schema({
     city: String,  
     country: String,
 });
-// // Creating an instance of the model
-// const User = mongoose.model("User", nameSchema)
 
+//Creating an instance of the model
 module.exports =  mongoose.model("User", nameSchema)

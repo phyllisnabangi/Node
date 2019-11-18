@@ -1,0 +1,21 @@
+extends layout
+
+block content
+
+    div.row.justify-content-center
+        div.col-md-6
+            div.card-body.border
+                header.card-header
+                    h4.card-title.text-center.pt-1.text-secondary File &amp; Image Uploads
+                article.card-body
+                    form(method='POST' action="/upload" enctype='multipart/form-data')
+                        div.file-field.input-field
+                            input(type='file', name='imageupload')
+                            input(type='submit', name='uploadimage', value='Upload ')
+            //- End of Card-body
+
+
+
+                    
+                    
+            
