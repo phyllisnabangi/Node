@@ -4,6 +4,9 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const mongoose = require("mongoose");
 const multer = require('multer');
+// const fs= require('fs');// requring the file system
+
+
 
 // Init app 
 const app = express();
@@ -14,7 +17,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 // setting the static folder
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 //Importing the Routes
 const regRoute = require('./routes/regroutes')
@@ -24,8 +27,11 @@ const uploadRoute = require('./routes/uploadRoute')
 app.use('/upload', uploadRoute);
 
 
+
+
+
 // mongoose db connection
-mongoose.connect("mongodb://localhost:27017/node-demo");
+mongoose.connect("mongodb://localhost:27017/node-demo", {useUnifiedTopology: true, useNewUrlParser: true});
 
 
 //  Listening for requests: the server

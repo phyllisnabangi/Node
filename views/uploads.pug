@@ -10,10 +10,21 @@ block content
                 article.card-body
                     form(method='POST' action="/upload" enctype='multipart/form-data')
                         div.file-field.input-field
-                            input(type='file', name='imageupload')
-                            input(type='submit', name='uploadimage', value='Upload ')
-    div.row
-        img(src='/public/upload/dd.jpg' , alt='image not found')
+                            div.form-row
+                                input(type='file', name='myImage' accept='image/*')
+                                input.bg-primary(type='submit', value='Upload Image')
+                            //- div.form-row.py-4
+                            //-     input(type='file', name='myFiles' multiple)
+                            //-     input(type='submit', value='Upload Files')
+                            div.form-row.py-4
+                                input(type='file', name='myFile')
+                                input(type='submit', value='Upload File')
+                        
+                            
+                        
+                              
+    div.row 
+        img.responsive-img(src="upload/" + image, alt='image not found')
             //- End of Card-body
 
 

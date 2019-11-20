@@ -4,7 +4,7 @@
   "description": "Class Project - Web App",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "nodemon index.js"
   },
   "author": "Phyllis Nabangi",
@@ -17,6 +17,7 @@
     "pug": "^2.0.4"
   },
   "devDependencies": {
+    "jest": "^24.9.0",
     "nodemon": "^1.19.4"
   }
 }

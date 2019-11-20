@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
     res.render('form');
 })
 
-// submits the reguster page information
+// submits the register page information
 router.post('/', async (req, res) => {
     const user= new User(req.body)
     try{

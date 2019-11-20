@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 
 // schema definition
 const nameSchema = new mongoose.Schema({
-    firstname: {
+    firstname: { 
         type: String,
         required: 'Please Enter first name'
                },
