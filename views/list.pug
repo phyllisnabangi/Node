@@ -2,7 +2,7 @@ extends layout
 block content
  
     div.row.justify-content-center
-        div.col-md-8
+        div.col-md-12
             div.card-body.border   
                 header.card-header
                     h4.card-title Registered users
@@ -15,6 +15,7 @@ block content
                             th Gender
                             th City
                             th Country
+                            th Password
                         tbody
                             //- iteration method 
                             each user in users
@@ -25,3 +26,4 @@ block content
                                     td #{user.gender}
                                     td #{user.city}
                                     td #{user.country}
+                                    td #{user.password}

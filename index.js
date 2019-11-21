@@ -26,6 +26,9 @@ app.use('/reg', regRoute);
 const uploadRoute = require('./routes/uploadRoute')
 app.use('/upload', uploadRoute);
 
+const loginRoute = require('./routes/loginRoute')
+app.use('/login', loginRoute);
+
 
 
 
