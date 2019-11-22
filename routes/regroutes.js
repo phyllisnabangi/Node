@@ -18,7 +18,7 @@ router.post('/', async (req, res) => {
         await user.save()
         console.log("Item has been saved");
         const items = await User.find()
-        res.render('list', {users:items})       
+        res.render('loginForm', {users:items})       
     } catch(err) {
         res.status(500).send("unable to save to database");
     }

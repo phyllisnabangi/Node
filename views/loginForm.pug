@@ -3,33 +3,33 @@ extends layout
 block content
 
     div.row.justify-content-center
-        div.col-md-5
-            div.card-body.border
+        div.col-md-4
+            div.card
                 header.card-header
                     h4.card-title.text-center.pt-1 Login
                 article.card-body
-                form(method="POST" action="/login")
-                    div.form-row
-                        div.col.form-group
-                            label User name
-                            input.form-control( name="username")
-                    
-                    div.form-row
-                        div.col.form-group
-                            label Email address
-                            input.form-control( name="emailaddress")
-                            small.form-text.text-muted We'll never share your email with anyone else.
-
-                    div.form-row
-                        div.col.form-group
-                            label Enter password
-                            input.form-control(type="password" name="password")
-                    div.form-row
-                        div.col-md-6.form-group
-                            button.btn.btn-primary.btn-block(type="submit") Login
+                    form(method="POST" action="/login")
+                        div.form-row
+                            div.col.form-group
+                                label User name
+                                input.form-control( name="username")
                         
-                   
+                        div.form-row
+                            div.col.form-group
+                                label Email address
+                                input.form-control( name="emailaddress")
+                                small.form-text.text-muted We'll never share your email with anyone else.
+
+                        div.form-row
+                            div.col.form-group
+                                label Enter password
+                                input.form-control(type="password" name="password")
+                        div.form-row
+                            div.col-md-6.form-group.mx-5
+                                button.btn.btn-primary.btn-block.mx-5(type="submit") Login
                             
+                    
+                                
                             
                                         
                 //- End of form

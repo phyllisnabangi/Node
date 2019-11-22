@@ -31,7 +31,7 @@ nameSchema.pre('save', function(next){
 })
 
 //authenticate input against database
-registerSchema.statics.authenticate = async function (username, password) {
+nameSchema.statics.authenticate = async function (username, password) {
     const user = await this.findOne({ username: username })
     if (!user) {
         throw new Error('User not found.');
