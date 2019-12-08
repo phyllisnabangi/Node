@@ -2,7 +2,7 @@
 const express =  require('express');
 const router = express.Router();
 const User = require('../model/regModel')
-const multer = require('multer')
+// const multer = require('multer')
 
 
 /* Login Page */
@@ -15,11 +15,16 @@ router.get('/', (req, res) => {
 router.post('/', async(req, res) => {
     try{
         const user = await User.authenticate(req.body.username, req.body.password);
-        res.send("hey " + user.firstname + " " + user.lastname)
+        req.session.user = user; //starting a session for that user
+        res.redirect('reg/list')
+        // res.send("hey " + user.firstname + " " + user.lastname)
     }catch{
-        res.send("Login Failed")
+        res.render('loginForm', {
+            error: "Failed to login, please try again"
+        })
+        // res.send("Login Failed")
         // res.redirect('register')
     }
 })
 
- module.exports = router;
+ module.exports = router;     

@@ -17,10 +17,27 @@ router.post('/', async (req, res) => {
     try{
         await user.save()
         console.log("Item has been saved");
-        const items = await User.find()
-        res.render('loginForm', {users:items})       
+        res.redirect('/login')  
+        // const items = await User.find()
+        // res.render('loginForm', {users:items})       
     } catch(err) {
         res.status(500).send("unable to save to database");
+    }
+})
+
+// returns a specific page
+router.get('/list', async(req,res)=>{
+    // checking the session of the particular user is on
+    if(req.session.user){
+        try{
+            const items = await User.find() 
+            res.render('list', {users:items, currentUser: req.session.user}) 
+            
+        } catch (err) {
+            res.status(500).send("unable to save to database");
+        }
+    } else {
+        res.redirect('/login')
     }
 })
 

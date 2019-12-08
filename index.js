@@ -4,6 +4,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const mongoose = require("mongoose");
 const multer = require('multer');
+const session = require('express-session')
 // const fs= require('fs');// requring the file system
 
 
@@ -19,6 +20,13 @@ app.set('views', path.join(__dirname, 'views'));
 // setting the static folder
 app.use(express.static(path.join(__dirname, 'public')));
 
+// use sessions for tracking logins
+app.use(session({
+    secret: 'thesecret',
+    resave: true,
+    saveUninitialized: true
+}));
+
 //Importing the Routes
 const regRoute = require('./routes/regroutes')
 app.use('/reg', regRoute);
@@ -28,6 +36,9 @@ app.use('/upload', uploadRoute);
 
 const loginRoute = require('./routes/loginRoute')
 app.use('/login', loginRoute);
+
+const logoutRoute = require('./routes/loginRoute')
+app.use('/logout', logoutRoute);
 
 
 

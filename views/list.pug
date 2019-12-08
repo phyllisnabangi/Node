@@ -2,10 +2,21 @@ extends layout
 block content
  
     div.row.justify-content-center
-        div.col-md-11
-            div.card-body.border   
-                header.card-header
-                    h4.card-title Registered users
+
+        div.card   
+            header.card-header
+
+                div.form-row
+                    div.col-md-9.form-group 
+                        h4.card-title Registered users
+                        b Hello #{currentUser.firstname}  
+                
+                    div.col-md-2.form-group    
+                        form.my-2(method="post" action='/logout')
+                            button.btn.btn-outline-danger.btn-block(type="submit") Log out
+   
+
+            article.card-body
                 table.table
                     thead.thead-dark
                         tr 
@@ -15,7 +26,7 @@ block content
                             th Gender
                             th City
                             th Country
-                            th Password
+                            //- th Password
                         tbody
                             //- iteration method 
                             each user in users
@@ -26,4 +37,4 @@ block content
                                     td #{user.gender}
                                     td #{user.city}
                                     td #{user.country}
-                                    td #{user.password}
+                                    //- td #{user.password}

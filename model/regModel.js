@@ -2,6 +2,8 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 
+mongoose.set('useCreateIndex', true);
+
 // schema definition
 const nameSchema = new mongoose.Schema({
     firstname: { 
