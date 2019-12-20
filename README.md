@@ -1,9 +1,11 @@
-# Node
-## Node and TDD  Class  at Refactory Ug
-## Builiding a Web app with EXPRESS, PUG, node.js and Mongo Db
+# Node Class
+## Node and TDD Class  at Refactory Ug 
+Builiding a Web app
 ## Concepts Used
-MVC 
-Built web pages using Pug 
-MongoDb for database 
-Testing using jest
+### EXPRESS 
+### PUG to design web pages
+### Node.js to connect to the server
+### Built web pages using Pug 
+### MongoDb for database 
+### Testing using jest
 
