@@ -40,6 +40,9 @@ app.use('/login', loginRoute);
 const logoutRoute = require('./routes/loginRoute')
 app.use('/logout', logoutRoute);
 
+const crudRoute = require('./routes/crudRoute')
+app.use('/crud', crudRoute);
+
 
 
 

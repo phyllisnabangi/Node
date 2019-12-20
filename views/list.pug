@@ -15,7 +15,14 @@ block content
                         form.my-2(method="post" action='/logout')
                             button.btn.btn-outline-danger.btn-block(type="submit") Log out
    
-
+            div.form-row
+                div.col.form-group.col-md-9.mx-2.mt-3    
+                    form.search(action='/crud/search')
+                        div.form-row
+                            div.col-md-8
+                                input.form-control(name='city' placeholder="Enter your search term ...")
+                            div.col-md-4
+                                input.btn.btn-dark.btn-block(type="submit")
             article.card-body
                 table.table
                     thead.thead-dark
@@ -37,4 +44,12 @@ block content
                                     td #{user.gender}
                                     td #{user.city}
                                     td #{user.country}
-                                    //- td #{user.password}
+                                    td
+                                        form(method="post" action='/crud/edit')
+                                            input(type="hidden", placeholder="", name="id", value=user._id)
+                                            button.btn.btn-dark.btn-block(type="submit") Edit
+                                    td
+                                        form(method="post" action='/crud/delete')
+                                            input(type="hidden", placeholder="", name="id", value=user._id)
+                                            button.btn.btn-dark.btn-block(type="submit") Delete
+                                                    
